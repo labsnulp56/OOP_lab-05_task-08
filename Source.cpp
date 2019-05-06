@@ -19,9 +19,9 @@ public:
 	void SetBoxWeight(double box_weight);
 	double GetBoxWeight(Game &obj);
 	double GetFigureWeight(Game &obj);
-
-	//friend void quick_object(Game items[], int count);		
-	//friend void qs_obj(Game items[], int left, int right);	
+	virtual double GetWeight(Game &obj) = 0;
+	//friend void quick_object(Game items[], int count);    
+	//friend void qs_obj(Game items[], int left, int right);  
 	//friend double WeightSum(Game items[], int count);
 };
 
@@ -29,26 +29,27 @@ class Checkers : public Game {
 private:
 	double full_weight;
 public:
-	double GetWeight(Checkers &obj);
+	double GetWeight(Game &obj) override;
 };
 
 class Domino : public Game {
 private:
 	double full_weight;
 public:
-	double GetWeight(Domino &obj);	
+	double GetWeight(Game &obj) override;
 };
 
 int main(void)
 {
 	system("color F1");
-	const int arr_size = 1;
+	const int arr_size = 4;
 	char temp_name[20];
 	double figure_weight;
 	double box_weight;
 	register int i = 0;
 	Checkers check_arr[arr_size];
 	Domino dom_arr[arr_size];
+	Game** main_arr = new Game*[arr_size];
 
 	for (i = 0; i < arr_size; i++)
 	{
@@ -91,6 +92,11 @@ int main(void)
 		cout << "Checkers Figure weight is " << dom_arr[i].GetBoxWeight(dom_arr[i]) << endl;
 		cout << "------------------" << endl;
 	}
+
+	
+		main_arr[0] = new Checkers();
+	
+
 
 	system("pause");
 	return 0;
@@ -141,13 +147,13 @@ char* Game::strcpy(char* destination, const char* source)
 }
 /*--------------------*/
 
-double Checkers::GetWeight(Checkers &obj)
+double Checkers::GetWeight(Game &obj)
 {
 	this->full_weight = GetFigureWeight(obj) * 24;
 	return this->full_weight;
 }
 
-double Domino::GetWeight(Domino &obj)
+double Domino::GetWeight(Game &obj)
 {
 	this->full_weight = GetFigureWeight(obj) * 28;
 	return this->full_weight;
