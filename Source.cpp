@@ -50,7 +50,6 @@ int main(void)
 	Checkers check_arr[arr_size];
 	Domino dom_arr[arr_size];
 	Game** main_arr = new Game*[arr_size];
-
 	for (i = 0; i < arr_size; i++)
 	{
 		cout << "Input Checkers name of game" << endl;
@@ -71,7 +70,6 @@ int main(void)
 		cout << "Checkers Figure weight is " << check_arr[i].GetBoxWeight(check_arr[i]) << endl;
 		cout << "------------------" << endl;
 	}
-
 	for (i = 0; i < arr_size; i++)
 	{
 		cout << "Input Domino name of game" << endl;
@@ -92,26 +90,21 @@ int main(void)
 		cout << "Checkers Figure weight is " << dom_arr[i].GetBoxWeight(dom_arr[i]) << endl;
 		cout << "------------------" << endl;
 	}
-
 	cout << "WARNING!!!" << endl;
-		main_arr[0] = new Checkers();
+	main_arr[0] = new Checkers();
 
-		for (i = 0; i < arr_size; i++)
-		{
-	
-			cout << "Checkers Name of game is " << main_arr[i]->GetName() << endl;
-			cout << "Checkers Board weight is " << main_arr[i]->GetWeight(main_arr[i]) << endl;
-			cout << "Checkers Figure weight is " << main_arr[i]->GetBoxWeight(main_arr[i]) << endl;
-			cout << "------------------" << endl;
-		}
-
-		//for (i = 0; i < arr_size; i++)
-		//{
-		//	delete main_arr[i];
-		//}
-		//delete[]main_arr;
-
-
+	for (i = 0; i < arr_size; i++)
+	{
+		cout << "Checkers Name of game is " << main_arr[i]->GetName() << endl;
+		cout << "Checkers Board weight is " << main_arr[i]->GetWeight(main_arr[i]) << endl;
+		cout << "Checkers Figure weight is " << main_arr[i]->GetBoxWeight(main_arr[i]) << endl;
+		cout << "------------------" << endl;
+	}
+	//for (i = 0; i < arr_size; i++)
+	//{
+	//  delete main_arr[i];
+	//}
+	//delete[]main_arr;
 	system("pause");
 	return 0;
 }
@@ -159,7 +152,6 @@ char* Game::strcpy(char* destination, const char* source)
 	*destination = '\0';
 	return ptr;
 }
-/*--------------------*/
 
 double Checkers::GetWeight(Game &obj)
 {
