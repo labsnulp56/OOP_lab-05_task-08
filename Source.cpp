@@ -96,8 +96,8 @@ int main(void)
 	for (i = 0; i < arr_size; i++)
 	{
 		cout << "Checkers Name of game is " << main_arr[i]->GetName() << endl;
-		cout << "Checkers Board weight is " << main_arr[i]->GetWeight(main_arr[i]) << endl;
-		cout << "Checkers Figure weight is " << main_arr[i]->GetBoxWeight(main_arr[i]) << endl;
+		cout << "Checkers Board weight is " << main_arr[i]->GetWeight(main_arr[i]) << endl; /*main_arr[i] ??????*/
+		cout << "Checkers Figure weight is " << main_arr[i]->GetBoxWeight(main_arr[i]) << endl;/*main_arr[i] ??????*/
 		cout << "------------------" << endl;
 	}
 	//for (i = 0; i < arr_size; i++)
