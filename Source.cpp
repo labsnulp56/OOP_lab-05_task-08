@@ -30,6 +30,7 @@ public:
 	friend double WeightSum(Checkers items[], int count);		/*!!!! why only with checkers???*/
 };
 
+
 class Domino : public Game {
 private:
 	char dom_imit_name[20];
