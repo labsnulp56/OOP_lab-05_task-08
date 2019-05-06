@@ -42,7 +42,7 @@ public:
 int main(void)
 {
 	system("color F1");
-	const int arr_size = 4;
+	const int arr_size = 1;
 	char temp_name[20];
 	double figure_weight;
 	double box_weight;
@@ -93,9 +93,22 @@ int main(void)
 		cout << "------------------" << endl;
 	}
 
-	
+	cout << "WARNING!!!" << endl;
 		main_arr[0] = new Checkers();
-	
+
+		for (i = 0; i < arr_size; i++)
+		{
+			cout << "Checkers Name of game is " << main_arr[i]->GetName() << endl;
+			cout << "Checkers Board weight is " << main_arr[i]->GetWeight(dom_arr[i]) << endl;
+			cout << "Checkers Figure weight is " << main_arr[i]->GetBoxWeight(dom_arr[i]) << endl;
+			cout << "------------------" << endl;
+		}
+
+		//for (i = 0; i < arr_size; i++)
+		//{
+		//	delete main_arr[i];
+		//}
+		//delete[]main_arr;
 
 
 	system("pause");
